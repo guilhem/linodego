@@ -55,6 +55,7 @@ type LKEClusterAPIEndpoint struct {
 
 // LKEClusterKubeconfig fields are those returned by GetLKEClusterKubeconfig
 type LKEClusterKubeconfig struct {
+	// The Base64-encoded Kubeconfig file for this Cluster.
 	KubeConfig string `json:"kubeconfig"`
 }
 
