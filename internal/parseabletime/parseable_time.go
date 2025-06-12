@@ -20,3 +20,11 @@ func (p *ParseableTime) UnmarshalJSON(b []byte) error {
 
 	return nil
 }
+
+func (p *ParseableTime) MarshalJSON() ([]byte, error) {
+	if p == nil {
+		return []byte("null"), nil
+	}
+	t := time.Time(*p)
+	return json.Marshal(t.Format(dateLayout))
+}
